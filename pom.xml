@@ -24,7 +24,7 @@
 
 	<groupId>org.atteo</groupId>
 	<artifactId>parent</artifactId>
-	<version>1.1</version>
+	<version>1.2</version>
 	<packaging>pom</packaging>
 	<name>Atteo Parent</name>
 	<description>Atteo Parent POM</description>
@@ -67,10 +67,10 @@
 	</distributionManagement>
 	<properties>
 		<atomikos.version>3.8.0</atomikos.version>
-		<hibernate.version>4.1.9.Final</hibernate.version>
+		<hibernate.version>4.2.0.Final</hibernate.version>
 		<hornetq.version>2.2.21.Final</hornetq.version>
-		<jersey.version>1.17</jersey.version>
-		<jetty.version>8.1.7.v20120910</jetty.version>
+		<jersey.version>1.17.1</jersey.version>
+		<jetty.version>9.0.0.v20130308</jetty.version>
 
 		<!-- NetBeans also reads properties from POM -->
 		<netbeans.checkstyle.format>true</netbeans.checkstyle.format>
@@ -81,14 +81,14 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<shiro.version>1.2.1</shiro.version>
 		<sisu-guice.version>3.1.3</sisu-guice.version>
-		<slf4j.version>1.7.2</slf4j.version>
+		<slf4j.version>1.7.5</slf4j.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>javax.xml.bind</groupId>
 				<artifactId>jaxb-api</artifactId>
-				<version>2.2.7</version>
+				<version>2.2.9</version>
 			</dependency>
 			<dependency>
 				<groupId>com.sun.xml.bind</groupId>
@@ -133,7 +133,7 @@
 			<dependency>
 				<groupId>ch.qos.logback</groupId>
 				<artifactId>logback-classic</artifactId>
-				<version>1.0.9</version>
+				<version>1.0.11</version>
 			</dependency>
 			<dependency>
 				<groupId>org.sonatype.sisu</groupId>
@@ -218,7 +218,7 @@
 			<dependency>
 				<groupId>com.google.guava</groupId>
 				<artifactId>guava</artifactId>
-				<version>13.0.1</version>
+				<version>14.0.1</version>
 			</dependency>
 			<dependency>
 				<groupId>com.sun.jersey.contribs</groupId>
@@ -243,7 +243,7 @@
 			<dependency>
 				<groupId>com.h2database</groupId>
 				<artifactId>h2</artifactId>
-				<version>1.3.170</version>
+				<version>1.3.171</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.shiro</groupId>
@@ -333,7 +333,7 @@
 			<dependency>
 				<groupId>org.apache.ant</groupId>
 				<artifactId>ant</artifactId>
-				<version>1.8.4</version>
+				<version>1.9.0</version>
 			</dependency>
 			<dependency>
 				<groupId>org.eclipse.jetty</groupId>
@@ -343,6 +343,11 @@
 			<dependency>
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-servlet</artifactId>
+				<version>${jetty.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-servlets</artifactId>
 				<version>${jetty.version}</version>
 			</dependency>
 			<dependency>
@@ -371,7 +376,7 @@
 				</plugin>
 				<plugin>
 					<artifactId>maven-checkstyle-plugin</artifactId>
-					<version>2.9.1</version>
+					<version>2.10</version>
 				</plugin>
 				<plugin>
 					<artifactId>maven-clean-plugin</artifactId>
@@ -389,7 +394,7 @@
 				</plugin>
 				<plugin>
 					<artifactId>maven-dependency-plugin</artifactId>
-					<version>2.6</version>
+					<version>2.7</version>
 				</plugin>
 				<plugin>
 					<artifactId>maven-install-plugin</artifactId>
@@ -404,6 +409,8 @@
 					<version>2.9</version>
 					<configuration>
 						<detectLinks>true</detectLinks>
+						<linksource>true</linksource>
+						<sourcetab>4</sourcetab>
 					</configuration>
 				</plugin>
 				<plugin>
@@ -427,7 +434,7 @@
 				</plugin>
 				<plugin>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>2.13</version>
+					<version>2.14</version>
 					<configuration>
 						<useFile>false</useFile>
 						<systemProperties>
@@ -457,6 +464,9 @@
 				<plugin>
 					<artifactId>maven-invoker-plugin</artifactId>
 					<version>1.8</version>
+					<configuration>
+						<showErrors>true</showErrors>
+					</configuration>
 				</plugin>
 				<plugin>
 					<artifactId>maven-site-plugin</artifactId>
@@ -470,8 +480,8 @@
 						<failOnError>false</failOnError>
 						<effort>Max</effort>
 						<!--
-												<excludeFilterFile>findbugs-exclude.xml</excludeFilterFile>
-												-->
+							<excludeFilterFile>findbugs-exclude.xml</excludeFilterFile>
+						-->
 					</configuration>
 				</plugin>
 				<plugin>
