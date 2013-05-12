@@ -24,7 +24,7 @@
 
 	<groupId>org.atteo</groupId>
 	<artifactId>parent</artifactId>
-	<version>1.2</version>
+	<version>1.3</version>
 	<packaging>pom</packaging>
 	<name>Atteo Parent</name>
 	<description>Atteo Parent POM</description>
@@ -70,7 +70,7 @@
 		<hibernate.version>4.2.0.Final</hibernate.version>
 		<hornetq.version>2.2.21.Final</hornetq.version>
 		<jersey.version>1.17.1</jersey.version>
-		<jetty.version>9.0.0.v20130308</jetty.version>
+		<jetty.version>9.0.3.v20130506</jetty.version>
 
 		<!-- NetBeans also reads properties from POM -->
 		<netbeans.checkstyle.format>true</netbeans.checkstyle.format>
@@ -80,7 +80,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<shiro.version>1.2.1</shiro.version>
-		<sisu-guice.version>3.1.3</sisu-guice.version>
+		<sisu-guice.version>3.1.4</sisu-guice.version>
 		<slf4j.version>1.7.5</slf4j.version>
 	</properties>
 	<dependencyManagement>
@@ -93,7 +93,7 @@
 			<dependency>
 				<groupId>com.sun.xml.bind</groupId>
 				<artifactId>jaxb-impl</artifactId>
-				<version>2.2.6</version>
+				<version>2.2.7</version>
 			</dependency>
 			<dependency>
 				<groupId>junit</groupId>
@@ -133,7 +133,7 @@
 			<dependency>
 				<groupId>ch.qos.logback</groupId>
 				<artifactId>logback-classic</artifactId>
-				<version>1.0.11</version>
+				<version>1.0.13</version>
 			</dependency>
 			<dependency>
 				<groupId>org.sonatype.sisu</groupId>
@@ -173,12 +173,12 @@
 			<dependency>
 				<groupId>javax.validation</groupId>
 				<artifactId>validation-api</artifactId>
-				<version>1.0.0.GA</version>
+				<version>1.1.0.Final</version>
 			</dependency>
 			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-validator</artifactId>
-				<version>4.3.1.Final</version>
+				<version>5.0.1.Final</version>
 			</dependency>
 			<dependency>
 				<groupId>org.hibernate.javax.persistence</groupId>
@@ -494,6 +494,11 @@
 					<artifactId>maven-sortpom-plugin</artifactId>
 					<version>2.1.0</version>
 				</plugin>
+				<plugin>
+					<groupId>org.jacoco</groupId>
+					<artifactId>jacoco-maven-plugin</artifactId>
+					<version>0.6.2.201302030002</version>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 		<plugins>
@@ -515,6 +520,18 @@
 							<createBackupFile>false</createBackupFile>
 							<expandEmptyElements>false</expandEmptyElements>
 						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>prepare-agent</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
 					</execution>
 				</executions>
 			</plugin>
