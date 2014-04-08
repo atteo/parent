@@ -385,6 +385,11 @@
 					<artifactId>exec-maven-plugin</artifactId>
 					<version>1.2.1</version>
 				</plugin>
+				<plugin>
+					<groupId>org.sonatype.plugins</groupId>
+					<artifactId>nexus-staging-maven-plugin</artifactId>
+					<version>1.6</version>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 		<plugins>
@@ -514,6 +519,23 @@
 								</goals>
 							</execution>
 						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>nexus-staging</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.sonatype.plugins</groupId>
+						<artifactId>nexus-staging-maven-plugin</artifactId>
+						<version>1.6</version>
+						<extensions>true</extensions>
+						<configuration>
+							<serverId>sonatype-nexus-staging</serverId>
+							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+						</configuration>
 					</plugin>
 				</plugins>
 			</build>
