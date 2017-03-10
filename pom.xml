@@ -321,7 +321,7 @@
 				</plugin>
 				<plugin>
 					<artifactId>maven-source-plugin</artifactId>
-					<version>2.4</version>
+					<version>3.0.1</version>
 				</plugin>
 				<plugin>
 					<artifactId>maven-deploy-plugin</artifactId>
@@ -367,9 +367,9 @@
 					<version>3.0.0</version>
 				</plugin>
 				<plugin>
-					<groupId>com.google.code.sortpom</groupId>
-					<artifactId>maven-sortpom-plugin</artifactId>
-					<version>2.3.1</version>
+					<groupId>com.github.ekryd.sortpom</groupId>
+					<artifactId>sortpom-maven-plugin</artifactId>
+					<version>2.5.0</version>
 				</plugin>
 				<plugin>
 					<groupId>org.jacoco</groupId>
@@ -400,8 +400,8 @@
 		</pluginManagement>
 		<plugins>
 			<plugin>
-				<groupId>com.google.code.sortpom</groupId>
-				<artifactId>maven-sortpom-plugin</artifactId>
+				<groupId>com.github.ekryd.sortpom</groupId>
+				<artifactId>sortpom-maven-plugin</artifactId>
 				<executions>
 					<execution>
 						<phase>verify</phase>
