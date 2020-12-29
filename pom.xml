@@ -338,16 +338,9 @@
 					<version>3.8.2</version>
 				</plugin>
 				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>findbugs-maven-plugin</artifactId>
-					<version>3.0.5</version>
-					<configuration>
-						<failOnError>false</failOnError>
-						<effort>Max</effort>
-						<!--
-							<excludeFilterFile>findbugs-exclude.xml</excludeFilterFile>
-						-->
-					</configuration>
+					<groupId>com.github.spotbugs</groupId>
+					<artifactId>spotbugs-maven-plugin</artifactId>
+					<version>4.1.4</version>
 				</plugin>
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
