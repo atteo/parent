@@ -70,7 +70,6 @@
 		<netbeans.hint.license>apache20</netbeans.hint.license>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<sisu-guice.version>4.2.0</sisu-guice.version>
 		<slf4j.version>1.7.30</slf4j.version>
 	</properties>
 	<dependencyManagement>
@@ -134,21 +133,6 @@
 				<groupId>ch.qos.logback</groupId>
 				<artifactId>logback-classic</artifactId>
 				<version>1.2.3</version>
-			</dependency>
-			<dependency>
-				<groupId>org.sonatype.sisu</groupId>
-				<artifactId>sisu-guice</artifactId>
-				<version>${sisu-guice.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.sonatype.sisu.inject</groupId>
-				<artifactId>guice-servlet</artifactId>
-				<version>${sisu-guice.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.sonatype.sisu.inject</groupId>
-				<artifactId>guice-multibindings</artifactId>
-				<version>${sisu-guice.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.google.code.findbugs</groupId>
