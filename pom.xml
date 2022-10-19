@@ -64,7 +64,7 @@
 	</distributionManagement>
 	<properties>
 		<classindex.version>3.10</classindex.version>
-		<jackson.version>2.12.3</jackson.version>
+		<jackson.version>2.13.4.1</jackson.version>
 		<!-- NetBeans also reads properties from POM -->
 		<netbeans.checkstyle.format>true</netbeans.checkstyle.format>
 		<netbeans.compile.on.save>all</netbeans.compile.on.save>
