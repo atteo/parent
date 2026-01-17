@@ -33,7 +33,6 @@
         <classindex.version>3.13</classindex.version>
         <jackson.version>2.20.1</jackson.version>
         <!-- NetBeans also reads properties from POM -->
-        <netbeans.checkstyle.format>true</netbeans.checkstyle.format>
         <netbeans.compile.on.save>all</netbeans.compile.on.save>
         <netbeans.deploy.on.save>false</netbeans.deploy.on.save>
         <netbeans.hint.license>apache20</netbeans.hint.license>
@@ -170,12 +169,13 @@
         <pluginManagement>
             <plugins>
                 <plugin>
-                    <artifactId>maven-antrun-plugin</artifactId>
-                    <version>3.2.0</version>
+                    <groupId>com.diffplug.spotless</groupId>
+                    <artifactId>spotless-maven-plugin</artifactId>
+                    <version>3.1.0</version>
                 </plugin>
                 <plugin>
-                    <artifactId>maven-checkstyle-plugin</artifactId>
-                    <version>3.6.0</version>
+                    <artifactId>maven-antrun-plugin</artifactId>
+                    <version>3.2.0</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-clean-plugin</artifactId>
@@ -301,12 +301,12 @@
                 <plugin>
                     <groupId>pl.project13.maven</groupId>
                     <artifactId>git-commit-id-plugin</artifactId>
-                    <version>4.0.0</version>
+                    <version>4.9.10</version>
                 </plugin>
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>0.8.13</version>
+                    <version>0.8.14</version>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -316,7 +316,7 @@
                 <plugin>
                     <groupId>org.sonatype.plugins</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>
-                    <version>1.6.8</version>
+                    <version>1.7.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -331,6 +331,35 @@
             </plugins>
         </pluginManagement>
         <plugins>
+            <plugin>
+                <groupId>com.diffplug.spotless</groupId>
+                <artifactId>spotless-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <java>
+                        <palantirJavaFormat>
+                            <version>2.83.0</version>
+                            <!-- artifactId: palantir-java-format -->
+                            <style>PALANTIR</style>
+                        </palantirJavaFormat>
+                        <importOrder>
+                            <order>java,javax,org,com</order>
+                            <semanticSort>true</semanticSort>
+                        </importOrder>
+                        <removeUnusedImports/>
+                        <forbidWildcardImports/>
+                        <formatAnnotations/>
+                    </java>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <phase>verify</phase>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>com.github.ekryd.sortpom</groupId>
                 <artifactId>sortpom-maven-plugin</artifactId>
